@@ -89,13 +89,15 @@ def get_apt_detail(house_manage_no):
 
 
 # 3. 레이아웃 구성 (좌 7 : 우 3)
-st.title("🏢 청약홈 APT분양정보")
+#st.title("🏢 청약홈 APT분양정보")
+st.markdown("### 🏢 청약홈 APT분양정보")
 col_left, col_right = st.columns([7, 3])
 
 # --- [좌측: 분양정보] ---
 with col_left:
     with st.container(border=True):
-        st.subheader("검색조건")
+        #st.subheader("검색조건")
+        st.markdown("##### 📌 검색조건")
         c1, c2, c3 = st.columns([2, 2, 1])
 
         short_sido = [
@@ -153,7 +155,8 @@ with col_left:
             display_df = filtered_df[clist].reset_index(drop=True)
 
             with st.container(border=True):
-                st.subheader(f"검색내용 (총 {len(display_df)}건)")
+                #st.subheader(f"검색내용 (총 {len(display_df)}건)")
+                st.markdown(f"##### 📌 검색내용 (총 {len(display_df)}건)")
 
                 # 행 선택이 가능한 데이터프레임
                 event = st.dataframe(
@@ -179,7 +182,8 @@ with col_left:
 # --- [우측: 상세정보] ---
 with col_right:
     with st.container(border=True):
-        st.subheader("상세정보")
+        #st.subheader("상세정보")
+        st.markdown("##### 📌 상세정보")
         st.caption("좌측 목록에서 주택을 클릭하면 타입별 최고가가 조회됩니다.")
 
     selected_rows = []
