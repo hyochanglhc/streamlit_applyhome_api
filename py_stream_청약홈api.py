@@ -23,7 +23,7 @@ data_key = os.getenv('DATA_API_KEY')
 def get_apt_list(selected_date):
     
     # 로컬 .env 또는 서버 환경 변수에서 가져옴
-    data_key = st.secrets["DATA_APT_KEY"]
+    data_key = st.secrets["DATA_API_KEY"]
     url = (
         "https://api.odcloud.kr/api/ApplyhomeInfoDetailSvc/v1/getAPTLttotPblancDetail"
         f"?page=1&perPage=30000&cond%5BRCRIT_PBLANC_DE%3A%3AGTE%5D={selected_date}&serviceKey={data_key}"
