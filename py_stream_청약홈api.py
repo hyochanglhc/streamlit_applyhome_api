@@ -202,6 +202,7 @@ with col_left:
 
             clist = [
                 "모집공고일",                
+                "주택관리번호",
                 "주택명",
                 "공급규모",
                 "공급위치",
@@ -235,6 +236,13 @@ with col_left:
                     selection_mode="single-row",
                     on_select="rerun",
                     hide_index=True,
+                    column_config={
+                        "주택관리번호": None,
+                        "모집공고상세URL": st.column_config.LinkColumn(
+                            "모집공고 상세URL",
+                            display_text="🔗 공고보기",
+                        ),
+                    },
                 )
 
                 csv = display_df.to_csv(index=False).encode("utf-8-sig")
