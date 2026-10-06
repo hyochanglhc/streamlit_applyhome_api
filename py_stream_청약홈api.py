@@ -201,14 +201,14 @@ with col_left:
             ]
 
             clist = [
-                "모집공고일",
-                "주택관리번호",
+                "모집공고일",                
                 "주택명",
                 "공급규모",
                 "공급위치",
                 "사업주체명(시행사)",
                 "입주예정월",
                 "상한제",
+                "모집공고상세URL",
             ]
             valid_clist = [c for c in clist if c in filtered_df.columns]
             st.session_state["display_df"] = filtered_df[valid_clist].reset_index(
